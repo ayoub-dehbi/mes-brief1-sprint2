@@ -27,39 +27,42 @@ Afficher()
 
 function Afficher(){
 
-  produit_liste.appendChild("")
+  produit_liste.innerHTML = ``
 
   produits.forEach(element => {
     const div = document.createElement("div")
     const button = document.createElement("button")
     const strong = document.createElement("strong")
     const span = document.createElement("span")
+    const li = document.createElement("li")
     
-    strong.className("nom-produit")
-    span.className("prix-produit")
-    button.className("supprimer")
+    li.className =("produit")
+    strong.className = ("nom-produit")
+    span.className = ("prix-produit")
+    button.className= ("supprimer")
   
-    strong.textContent (element.nom)
-    span.textContent (element.prix)
-    button.textContent ("Retirer")
-    
+    strong.textContent = (element.nom)
+    span.textContent = (element.prix)
+    button.textContent =  ("Retirer")
+
     button.setAttribute("type","button")
-    button.setAttribute("onclick","delete(${element.id})")
+    button.setAttribute("onclick","delet(${element.id})")
 
     
-    div.appendChild("strong")
-    div.appendChild("span")
+    div.appendChild(strong)
+    div.appendChild(span)
   
   
-    produit_liste.appendChild("div")
-    produit_liste.appendChild("button")
+    li.appendChild(div)
+    li.appendChild(button)
+    produit_liste.appendChild(li)
   });
 
 
 
 }
 
-function delete(id){
+function delet(id){
   produits.filter(item => item.id !== id)
   Afficher()
 }
