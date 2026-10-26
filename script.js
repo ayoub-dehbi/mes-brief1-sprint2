@@ -5,6 +5,11 @@ let produits = [
 ];
 let prochainId = 3;
 
+
+const btn = document.getElementById("btn_submit")
+const nam = document.getElementById("nom")
+const prix = document.getElementById("prix")
+
 // À vous de jouer :
 // 1. Afficher les produits du tableau au chargement.
 // 2. Gérer l’ajout depuis le formulaire.
